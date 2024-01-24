@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My 4rd Page</title>
+    <link rel="stylesheet" href="style.css">
+<body>
+<!--Container to wrap everything-->
+ <div id="container">
+
+ </div>
+<!--Brand of website-->
+
+ <header>My Web Site Brand</header>
+ <!--Main Navigation-->
+ <nav>
+    <ul><li><a href="index.html"></a></li>
+        <li><a href="page2.html"></a></li>
+        <li><a href="page3.html"></li></a></li>
+        <li><a href="page4.html"></li></a></li>
+        
+    
+    
+    
+    </ul>
+</nav> <!--End Main Navigation-->
+
+<!--Main Content-->
+ <main>
+<h1>My Forth Heading</h1>
+<p>My Forth paragraph.</p>
+
+<ul id="album">
+    <!--
+    <li id="photo"><img src="images/winterland1.jpg"></li>
+    <li id="photo"><img src="images/winterland2.jpg"></li>
+    <li id="photo"><img src="images/winterland3.jpg"></li>
+    <li id="photo"><img src="images/winterland4.jpg"></li>
+    <li id="photo"><img src="images/winterland5.jpg"></li>
+    <li id="photo"><img src="images/winterland6.jpg"></li> -->
+
+
+</ul>
+
+
+
+
+</main> <!--End Main Content-->
+
+<!--Footer Information-->
+
+<footer>&copy; Copyright 2020</footer>
+</div> <!--End Container-->
+<script>
+    var photo =[];
+    var filename = [];
+    var imageList = []
+    var image;
+    var openList; = "<li id= 'photo'>"
+    var closedList = "</li>"
+
+    for (var i=0; i<6; i++){
+        fileNames.push("Winterland" + (i+1));
+        photos.push("<img src= 'images/"+ fileNames[i] + ".jpg'"); 
+        image = openList + photos[i] + closedList;
+        imageList.push (image);
+        document.getElementById("album").innerHTML = imageList.join(" ");
+    }
+
+
+
+
+    </script>
+
+
+</body>
+
+
+
+</head>
+
+
+
+
+
+
+
+
+</html>
+
+
