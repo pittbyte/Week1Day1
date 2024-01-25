@@ -3,6 +3,8 @@
 <head>
     <title>My 4rd Page</title>
     <link rel="stylesheet" href="style.css">
+</head>
+
 <body>
 <!--Container to wrap everything-->
  <div id="container">
@@ -15,8 +17,8 @@
  <nav>
     <ul><li><a href="index.html"></a></li>
         <li><a href="page2.html"></a></li>
-        <li><a href="page3.html"></li></a></li>
-        <li><a href="page4.html"></li></a></li>
+        <li><a href="page3.html"></a></li>
+        <li><a href="page4.html"></a></li>
         
     
     
@@ -26,8 +28,12 @@
 
 <!--Main Content-->
  <main>
-<h1>My Forth Heading</h1>
-<p>My Forth paragraph.</p>
+<h1>This is my fourth page.</h1>
+<p>My fourth paragraph.</p>
+
+
+    
+
 
 <ul id="album">
     <!--
@@ -35,7 +41,7 @@
     <li id="photo"><img src="images/winterland2.jpg"></li>
     <li id="photo"><img src="images/winterland3.jpg"></li>
     <li id="photo"><img src="images/winterland4.jpg"></li>
-    <li id="photo"><img src="images/winterland5.jpg"></li>
+    <li id="photo"><img src="images/photo-1549918468-576e4fffb2ab.avif"></li>
     <li id="photo"><img src="images/winterland6.jpg"></li> -->
 
 
@@ -51,26 +57,22 @@
 <footer>&copy; Copyright 2020</footer>
 </div> <!--End Container-->
 <script>
-    var photo =[];
-    var filename = [];
-    var imageList = []
+    var photo = [];
+    var fileNames = [];
+    var imageList = [];
     var image;
-    var openList; = "<li id= 'photo'>"
-    var closedList = "</li>"
+    var openList = "<li id='photo'>";
+    var closedList = "</li>";
 
-    for (var i=0; i<6; i++){
-        fileNames.push("Winterland" + (i+1));
-        photos.push("<img src= 'images/"+ fileNames[i] + ".jpg'"); 
-        image = openList + photos[i] + closedList;
-        imageList.push (image);
-        document.getElementById("album").innerHTML = imageList.join(" ");
+    for (var i = 1; i <= 6; i++) {
+        fileNames.push("winterland" + i);
+        photo.push("<img src='images/" + fileNames[i - 1] + ".jpg'>");
+        image = openList + photo[i - 1] + closedList;
+        imageList.push(image);
     }
 
-
-
-
-    </script>
-
+    document.getElementById("album").innerHTML = imageList.join(" ");
+</script>
 
 </body>
 

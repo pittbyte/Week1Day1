@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>M Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+          .photo {
+            display: inline-block; /* Align photos horizontally */
+            margin: 10px; /* Add some margin around each photo */
+            border: 1px solid #ddd; /* Add a border for visual separation */
+            padding: 5px; /* Add padding to the photos */
+        }
+
+        .photo img {
+            width: 100%; /* Make sure the images fill their container */
+            height: auto; /* Maintain the aspect ratio of the images */
+        }
+
+    </style>
+</head>
+
+<body>
+    <!--Container to wrap everything-->
+    <div id="container">
+
+    </div>
+    <!--Brand of website-->
+    <header>My Web Site Brand</header>
+    <!--Main Navigation-->
+    <nav>
+        <ul>
+            <li><a href="index.html"></a></li>
+            <li><a href="page2.html"></a></li>
+            <li><a href="page3.html"></li></a></li>
+            <li><a href="page4.html"></li></a></li>
+        </ul>
+    </nav> <!--End Main Navigation-->
+
+    <!--Main Content-->
+    <main>
+        <h1>My Gallery Heading</h1>
+        <p>My gallery paragraph.</p>
+
+        <ul id="album">
+            <!-- Photos will be added dynamically here using JavaScript -->
+        </ul>
+
+    </main> <!--End Main Content-->
+
+    <!--Footer Information-->
+    <footer>&copy; Copyright 2020</footer>
+    </div> <!--End Container-->
+
+    <script>
+        var photo = [];
+        var fileNames = [];
+        var imageList = [];
+        var image;
+        var openList = "<li class='photo'>";
+        var closedList = "</li>";
+
+        for (var i = 1; i <= 10; i++) {
+            fileNames.push("winterland" + i);
+            photo.push("<img src='images/" + fileNames[i - 1] + ".jpg'>");
+            image = openList + photo[i - 1] + closedList;
+            imageList.push(image);
+        }
+
+        document.getElementById("album").innerHTML = imageList.join(" ");
+    </script>
+
+</body>
+
+</html>
+
