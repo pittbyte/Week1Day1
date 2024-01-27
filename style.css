@@ -87,3 +87,16 @@ Footer {
 main #album #photo img{
     width: 400px;
 }
+.photo {
+    width: 45%;
+    box-sizing: border-box;
+    display: inline-block; /* Align photos horizontally */
+    margin: 10px; /* Add some margin around each photo */
+    border: 1px solid rgb(100, 118, 177); /* Add a border for visual separation */
+    padding: 5px; /* Add padding to the photos */
+}
+
+.photo img {
+    width: 100%; /* images fill their container */
+    height: auto; /* Maintain the aspect ratio of the images */
+}
