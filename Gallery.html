@@ -4,7 +4,29 @@
 <head>
     <title>M Gallery</title>
     <link rel="stylesheet" href="style.css">
-    
+   
+    <style>/*Info Box*/
+     #infoBox {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            padding: 10px;
+            z-index: 1;
+        }
+
+        #infoBox h2 {
+            margin-top: 0;
+        }
+
+        #closeLink {
+            cursor: pointer;
+            color: blue;
+        }
+       </style>
 </head>
 
 <body>
@@ -56,6 +78,12 @@
         
         
         </ul>
+        <!-- Information Box -->
+        <div id="infoBox">
+            <h2 id="infoHeading"></h2>
+            <p id="infoText"></p>
+            <a id="closeLink">Close</a>
+        </div>
 
     </main> <!--End Main Content-->
 
@@ -87,13 +115,42 @@
     for (var i = 0; i < photos.length; i++) {
         var photo = photos[i];
         var image = openList +
-            "<img src='images/" + photo.name + ".jpg' alt='" + photo.alt + "' title='" + photo.title + "'>" +
-            "<p>" + photo.caption + "</p>" +
-            closedList;
-        imageList.push(image);
-    }
+        "<img src='images/" + photo.name + ".jpg' alt='" + photo.alt + "' title='" + photo.title + "'>" +
+                "<p class='description' data-index='" + i + "'>" + photo.caption + "</p>" +
+                closedList;
+            imageList.push(image);
+        }
 
     document.getElementById("album").innerHTML = imageList.join(" ");
+
+     // Information Box functionality
+        var infoBox = document.getElementById("infoBox");
+        var infoHeading = document.getElementById("infoHeading");
+        var infoText = document.getElementById("infoText");
+        var closeLink = document.getElementById("closeLink");
+
+        document.querySelectorAll('.description').forEach(function (element) {
+            element.addEventListener('click', function () {
+                var index = this.getAttribute('data-index');
+                showInfoBox(photos[index]);
+            });
+        });
+
+        closeLink.addEventListener('click', function () {
+            hideInfoBox();
+        });
+
+        function showInfoBox(photo) {
+            infoHeading.innerHTML = photo.caption;
+            infoText.innerHTML = "Additional information goes here.";
+            infoBox.style.display = "block";
+        }
+
+        function hideInfoBox() {
+            infoBox.style.display = "none";
+        }
+
+    
 </script>
 
 
