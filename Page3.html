@@ -1,80 +1,90 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>My 3rd Page</title>
     <link rel="stylesheet" href="style.css">
-<body>
-<!--Container to wrap everything-->
- <div id="container">
-
- </div>
-<!--Brand of website-->
-
- <header>My Web Site Brand</header>
- <!--Main Navigation-->
- <nav>
-    <ul><li><a href="index.html">Home</a></li>
-        <li><a href="page2.html">About</a></li>
-        <li>Gallery</li>
-        <li><a href="page3.html"></a>Contact</li>
-        
-    
-    
-    
-    </ul>
-</nav> <!--End Main Navigation-->
-
-<!--Main Content-->
- <main>
-<h1>My Third Heading</h1>
-<p>My Third paragraph.</p>
-
-<form action+"/signup" method="post">
-
-<fieldset>
-<legend>User personal information</legend>
-<label>Enter your full name</label>
-<input type="email" name="email">
-<label>Enter your phone</label>
-<input type="text" name="phone">
-<label>Select your gender</label>
-<input type="radio" name="gender" value="male">Male
-<input type="radio" name="gender" value="female">Female
-<label>How Should we contact you?</label>
-<select>
-    <option>Email</option>
-    <option>Phone</option>
-
-</select>
-<label>Tell us the reason of your visit today:</label>
-<textarea rows="5" cols="30"></textarea>
-<input type="submit" value="sign-up">
-    
-
-
-</fieldset>
-</form>
-
-
-
-</main> <!--End Main Content-->
-
-<!--Footer Information-->
-
-<footer>&copy; Copyright 2020</footer>
-</div> <!--End Container-->
-
-
-
-</body>
-
-
-
 </head>
 
+<body>
+    <!--Container to wrap everything-->
+    <div id="container">
 
+    </div>
+    <!--Brand of website-->
+    <header>My Web Site Brand</header>
+    <!--Main Navigation-->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="page2.html">About</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="page3.html">Contact</a></li>
+        </ul>
+    </nav>
+    <!--End Main Navigation-->
 
+    <!--Main Content-->
+    <main>
+        <h1>My Third Heading</h1>
+        <p>My Third paragraph.</p>
 
+        <form action="/signup" method="post">
+            <fieldset>
+                <legend>User Personal Information</legend>
+                <label>Enter your full name</label>
+                <input type="email" name="email">
+                <label>Enter your phone</label>
+                <input type="text" name="phone">
+                <label>Select your gender</label>
+                <input type="radio" name="gender" value="male">Male
+                <input type="radio" name="gender" value="female">Female
+                <label>How should we contact you?</label>
+                <select id="contactMethod" onchange="showInputBox(); toggleBackground()">
+                    <option value="" disabled selected>Select One</option>
+                    <option value="email">By Email</option>
+                    <option value="phone">By Phone</option>
+                </select>
+
+                <!-- Modal -->
+                <div id="optionsModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-btn" onclick="closeModal()">&times;</span>
+                        <h4>Contact Options</h4>
+                        <p>Please choose one of the contact options:</p>
+                        <ul>
+                            <li><strong>Email:</strong> Provide your email address.</li>
+                            <li><strong>Phone:</strong> Provide your phone number.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="emailInput" class="hidden">
+                    <label>Email:</label>
+                    <input type="email" name="userEmail" class="blue-background">
+                </div>
+
+                <div id="phoneInput" class="hidden">
+                    <label>Phone:</label>
+                    <input type="text" name="userPhone" class="blue-background">
+                </div>
+
+                <label>Tell us the reason for your visit today:</label>
+                <textarea name="visitReason" rows="5" cols="30"></textarea>
+                <input type="submit" value="Sign-up">
+            </fieldset>
+        </form>
+        <script src="js/contactform.js"></script>
+    </main>
+    <!--End Main Content-->
+
+    <!--Footer Information-->
+    <footer>&copy; Copyright 2020</footer>
+    </div>
+    <!--End Container-->
+</body>
+
+</html>
 
 
 
